@@ -1,4 +1,5 @@
 import template from './thumb.html';
+import styles from './thumb.css';
 
 export default {
   template,
@@ -6,8 +7,8 @@ export default {
   require: {
     app:'^^'
   },
-  controller() {
-
+  controller: function() {
+    this.styles = styles;
 
   }
 };

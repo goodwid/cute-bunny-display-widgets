@@ -1,4 +1,5 @@
 import template from './text.html';
+import styles from './text.css';
 
 export default {
   template,
@@ -6,8 +7,8 @@ export default {
   require: {
     app:'^^'
   },
-  controller() {
-
+  controller: function() {
+    this.styles = styles;
 
   }
 };
