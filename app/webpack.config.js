@@ -21,9 +21,9 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?minimize')
       },
       {
-  			test: /\.html$/,
-  			loader: 'html?minimize',
-  		},
+        test: /\.html$/,
+        loader: 'html?minimize',
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
