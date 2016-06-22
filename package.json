@@ -1,0 +1,36 @@
+{
+  "name": "cute-bunny-display-widgets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YvonneHayes/cute-bunny-display-widgets.git"
+  },
+  "author": "Yvonne Hayes",
+  "collaborator": "David Goodwin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YvonneHayes/cute-bunny-display-widgets/issues"
+  },
+  "homepage": "https://github.com/YvonneHayes/cute-bunny-display-widgets#readme",
+  "dependencies": {
+    "angular": "^1.5.7"
+  },
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.13.1",
+    "eslint-loader": "^1.3.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.21.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
