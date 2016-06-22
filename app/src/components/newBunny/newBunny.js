@@ -10,7 +10,6 @@ export default {
   controller() {
     this.styles = styles;
     this.changeBunny = function() {
-      console.log(this);
       this.app.image = {title: this.title, description: this.description, url: this.url };
       this.title = '';
       this.description = '';
