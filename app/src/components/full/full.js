@@ -4,10 +4,11 @@ import styles from './full.css';
 export default {
   template,
   controllerAs: 'full',
-  require: {
-    app:'^^'
+  bindings: {
+    image: '='
   },
   controller: function() {
+
     this.styles = styles;
 
   }

@@ -4,13 +4,16 @@ import styles from './newBunny.css';
 export default {
   template,
   controllerAs: 'newBunny',
-  require: {
-    app:'^^'
+  // require: {
+  //   app:'^^'
+  // },
+  bindings: {
+    image: '='
   },
   controller() {
     this.styles = styles;
     this.changeBunny = function() {
-      this.app.image = {title: this.title, description: this.description, url: this.url };
+      this.image = {title: this.title, description: this.description, url: this.url };
       this.title = '';
       this.description = '';
       this.url = '';
