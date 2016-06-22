@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/YvonneHayes/cute-bunny-display-widgets#readme",
   "dependencies": {
-    "angular": "^1.5.7"
+    "angular": "^1.5.7",
+    "extract-text-webpack-plugin": "^1.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.10.4",
