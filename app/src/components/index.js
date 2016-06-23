@@ -12,6 +12,7 @@ const components = angular.module( 'components', [] );
 
 reqContext.keys().forEach( key => {
   const name = camelcase( path.basename( key, '.js' ) );
+  console.log('name: ', name, '\t\t\t\tkey: ', key);
   components.component( name, reqContext( key ).default );
 });
 
