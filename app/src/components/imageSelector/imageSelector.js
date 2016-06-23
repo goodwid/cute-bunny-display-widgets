@@ -4,7 +4,8 @@ export default {
   template,
   controllerAs: 'imageSelector',
   bindings: {
-    image: '='
+    image: '=',
+    view: '='
   },
   controller: function() {
 

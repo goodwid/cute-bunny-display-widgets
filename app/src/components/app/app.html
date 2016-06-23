@@ -1,3 +1,7 @@
 <section>
-  <image-selector image="app.data[0]"></image-selector>
+  <input type="radio" ng-model="app.view" value="text">Text<br>
+  <input type="radio" ng-model="app.view" value="thumb">Thumbnail<br>
+  <input type="radio" ng-model="app.view" value="full">Full View<br>
+
+<image-selector view="app.view" image="app.data[0]"></image-selector>
 </section>
