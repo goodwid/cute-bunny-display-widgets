@@ -1,11 +1,11 @@
 import template from './app.html';
+import styles from './app.scss';
 
 export default {
   template,
   controllerAs: 'app',
   controller() {
-
-
+    this.styles = styles;
     this.data = [{
       title: 'Cutest Bunny Ever',
       description: 'This is the cutest damn bunny in all of creation.  Other things attempting to be cute tremble with terror at the cuteness of the bunny displayed here today.',

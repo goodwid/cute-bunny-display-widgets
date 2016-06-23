@@ -1,4 +1,4 @@
-
+$height: 220px;
 :local(.tile) {
   height: 100px;
   width: 100px;
@@ -8,17 +8,28 @@
   list-style: none;
 }
 
-// :local(.div){
-//     width:160px;
-//     border:1px solid grey;
-//     min-height:150px;
-//     height:auto;
-//     vertical-align:middle;
-//     padding:8px;
-//     float:left
-// }
-// 
-// :local(.tile){
-//   display:block;
-//   margin:0 auto;
-// }
+:local(.image) {
+  height: $height;
+  width: 200px;
+  border: 1px solid grey;
+  font-size: 0.7em;
+  margin: 20px;
+  padding: 10px;
+  box-shadow:3px 3px 8px black;
+
+}
+
+:local(.div){
+    width:80%;
+    border:1px solid grey;
+    min-height: $height * 1.2;
+    height:auto;
+    padding:8px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+:local(.tile){
+  display:block;
+  margin:0 auto;
+}
