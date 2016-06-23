@@ -1,10 +1,17 @@
 <section>
   <h2 ng-class="tile.styles.headline">Tile view</h2>
   <div ng-class="tile.styles.div">
+<<<<<<< HEAD
     <ul ng-class="tile.styles.list">
       <li ng-repeat="image in tile.data">
+=======
+    <!-- <ul ng-class="tile.styles.list"> -->
+      <section ng-class="tile.styles.image" ng-repeat="image in tile.data">
+        <h4>{{image.title}}</h4>
+>>>>>>> 45ae25205f0e8e115557ccf37e7ce5f4a8aa10ee
         <img ng-class="tile.styles.tile" src="{{image.url}}">
-      </li>
-    </ul>
+        <section>{{image.description}}</section>
+      </section>
+    <!-- </ul> -->
   </div>
 </section>

@@ -7,6 +7,6 @@ export default {
     data: '='
   },
   controller: function() {
-    this.view = 'list';
+    this.view = 'tile';
   }
 };
