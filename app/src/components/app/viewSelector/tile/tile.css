@@ -2,7 +2,7 @@
   color: blue;
 }
 
-:local(.thumbnail) {
+:local(.tile) {
   height: 100px;
   width: 100px;
 }

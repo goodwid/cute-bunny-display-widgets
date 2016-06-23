@@ -8,8 +8,7 @@ sandbox.js
 *.exe
 *.o
 *.so
-*.scss
-*.sass*
+
 *.css.map
 # Packages #
 ############

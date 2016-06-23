@@ -1,14 +1,13 @@
-import template from './text.html';
-import styles from './text.css';
+import template from './tile.html';
+import styles from './tile.css';
 
 export default {
   template,
-  controllerAs: 'text',
+  controllerAs: 'tile',
   bindings: {
-    image: '='
+    data: '='
   },
   controller: function() {
     this.styles = styles;
-
   }
 };

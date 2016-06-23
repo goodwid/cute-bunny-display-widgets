@@ -1,8 +1,4 @@
 <section>
-  <input type="radio" ng-model="app.view" value="text">Text<br>
-  <input type="radio" ng-model="app.view" value="thumb">Thumbnail<br>
-  <input type="radio" ng-model="app.view" value="full">Full View<br>
-  <button ng-click="app.prev()">Prev</button><button ng-click="app.next()">Next</button>
-<image-selector view="app.view" image="app.data[app.index]"></image-selector>
+<view-selector data="app.data"></view-selector>
 <new-bunny data="app.data"></new-bunny>
 </section>
