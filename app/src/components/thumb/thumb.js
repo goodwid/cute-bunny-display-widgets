@@ -4,11 +4,10 @@ import styles from './thumb.css';
 export default {
   template,
   controllerAs: 'thumb',
-  require: {
-    app:'^^'
+  bindings: {
+    src: '='
   },
   controller: function() {
     this.styles = styles;
-
   }
 };

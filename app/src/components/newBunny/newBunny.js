@@ -4,9 +4,6 @@ import styles from './newBunny.css';
 export default {
   template,
   controllerAs: 'newBunny',
-  // require: {
-  //   app:'^^'
-  // },
   bindings: {
     image: '='
   },
