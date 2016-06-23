@@ -1,4 +1,10 @@
+@import 'colors';
+
 body {
   font-family: sans-serif;
   font-size: 1.1em;
+}
+
+h2 {
+  color: $basic-color;
 }

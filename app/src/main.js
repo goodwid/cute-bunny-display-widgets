@@ -1,5 +1,5 @@
 import angular from 'angular';
 import app from './bunny-app';
-import './css/main.css';
+import './scss/main.scss';
 
 angular.bootstrap(document, [app]);

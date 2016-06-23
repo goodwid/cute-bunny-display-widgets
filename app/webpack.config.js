@@ -21,6 +21,10 @@ module.exports = {
         loader: 'style!css'
       },
       {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap!sass?sourceMap'
+      },
+      {
         test: /\.html$/,
         loader: 'html?minimize',
       },
@@ -33,6 +37,9 @@ module.exports = {
         }
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [ './src/scss/includes']
   },
   devtool: 'source-map',
   plugins: [
