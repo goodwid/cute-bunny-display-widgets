@@ -1,5 +1,5 @@
 import template from './list.html';
-import styles from './list.css';
+import styles from './list.scss';
 
 export default {
   template,

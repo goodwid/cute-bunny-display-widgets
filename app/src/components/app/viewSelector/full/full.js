@@ -1,5 +1,5 @@
 import template from './full.html';
-import styles from './full.css';
+import styles from './full.scss';
 
 export default {
   template,
