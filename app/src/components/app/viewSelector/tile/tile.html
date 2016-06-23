@@ -4,8 +4,7 @@
       <section ng-class="tile.styles.tile" ng-repeat="image in tile.data">
         <h4>{{image.title}}</h4>
 
-        <img ng-class="tile.styles.image" src="{{image.url}}">
-        <section>{{image.description}}</section>
+        <img ng-class="tile.styles.image" title="{{image.description}}" src="{{image.url}}">
       </section>
     <!-- </ul> -->
   </div>

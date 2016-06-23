@@ -1,7 +1,12 @@
+@mixin border {
+  border: 1px solid darkgray;
+}
+$thumb-size: 80%;
+
 $tile-height: 220px;
 :local(.image) {
-  height: 100px;
-  width: 100px;
+  height: $thumb-size;
+  width: $thumb-size;
   display:block;
   margin:0 auto;
 }
@@ -14,20 +19,20 @@ $tile-height: 220px;
 :local(.tile) {
   height: $tile-height;
   width: 200px;
-  border: 1px solid grey;
   font-size: 0.7em;
   margin: 20px;
   padding: 10px;
   box-shadow:3px 3px 8px black;
-
+  @include border;
 }
 
 :local(.div){
-    width:80%;
-    border:1px solid grey;
-    min-height: $tile-height * 1.2;
-    height:auto;
-    padding:8px;
-    display: flex;
-    flex-flow: row wrap;
+  width:92%;
+  min-height: $tile-height * 1.2;
+  height:auto;
+  padding:8px;
+  display: flex;
+  flex-flow: row wrap;
+  @include border;
+  margin: 0 auto;
 }
