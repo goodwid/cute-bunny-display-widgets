@@ -8,6 +8,6 @@ export default {
     view: '='
   },
   controller: function() {
-
+    this.view = 'text';
   }
 };

@@ -5,12 +5,13 @@ export default {
   template,
   controllerAs: 'newBunny',
   bindings: {
-    image: '='
+    data: '='
   },
   controller() {
     this.styles = styles;
-    this.changeBunny = function() {
-      this.image = {title: this.title, description: this.description, url: this.url };
+    this.addBunny = function() {
+      let image = {title: this.title, description: this.description, url: this.url };
+      this.data.push(image);
       this.title = '';
       this.description = '';
       this.url = '';
