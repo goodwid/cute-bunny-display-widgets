@@ -2,9 +2,9 @@
   <h2 ng-class="tile.styles.headline">Tile view</h2>
   <div ng-class="tile.styles.div">
     <!-- <ul ng-class="tile.styles.list"> -->
-      <section ng-class="tile.styles.image" ng-repeat="image in tile.data">
+      <section ng-class="tile.styles.tile" ng-repeat="image in tile.data">
         <h4>{{image.title}}</h4>
-        <img ng-class="tile.styles.tile" src="{{image.url}}">
+        <img ng-class="tile.styles.image" src="{{image.url}}">
         <section>{{image.description}}</section>
       </section>
     <!-- </ul> -->
