@@ -6,7 +6,3 @@
   height: 100px;
   width: 100px;
 }
-
-::-webkit-input-placeholder {
-  color: rgba(255, 0, 255, 0.7);
-}
