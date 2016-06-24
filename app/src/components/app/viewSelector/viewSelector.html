@@ -1,9 +1,12 @@
 <section>
   <nav>
     Choose your display:&nbsp;
-    <input type="radio" ng-model="viewSelector.view" value="list">List
-    <input type="radio" ng-model="viewSelector.view" value="tile">Tile
-    <input type="radio" ng-model="viewSelector.view" value="full">Full View
+    <input id="list" type="radio" ng-model="viewSelector.view" value="list">
+    <label for="list">List</label>
+    <input id="tile" type="radio" ng-model="viewSelector.view" value="tile">
+    <label for="tile">Tile</label>
+    <input id="full" type="radio" ng-model="viewSelector.view" value="full">
+    <label for="full">Full View</label>
   </nav>
 
   <list ng-if="(viewSelector.view === 'list')" data="viewSelector.data"></list>

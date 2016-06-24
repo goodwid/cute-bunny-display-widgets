@@ -1,5 +1,5 @@
 import template from './newBunny.html';
-import styles from './newBunny.css';
+import styles from './newBunny.scss';
 
 export default {
   template,
