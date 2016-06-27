@@ -8,7 +8,6 @@ export default {
     data: '='
   },
   controller: function() {
-    console.log(this.data);
     this.styles = styles;
 
   }

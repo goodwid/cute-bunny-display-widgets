@@ -10,11 +10,10 @@ export default {
   controller() {
     this.styles = styles;
     this.submit = () => {
-      let bunny = {title: this.title, description: this.description, url: this.url };
+      let bunny = this.bunny;
       this.add({bunny});
-      this.title = '';
-      this.description = '';
-      this.url = '';
+      this.bunny = {};
+
     };
   }
 };
