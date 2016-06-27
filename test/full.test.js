@@ -1,6 +1,4 @@
-/* global angular, chai */
-
-const assert = chai.assert;
+// const assert = chai.assert;
 
 describe('slideshow', () => {
   angular.mock.module.sharedInjector();
@@ -12,8 +10,8 @@ describe('slideshow', () => {
   }));
 
   it ('next function increases index', () => {
-    const full = $componentController('full', null, {data});
     const data = [0,1,2,3];
+    const full = $componentController('full', null, {data});
     full.data = data;
     full.next();
     assert.equal(full.index, 1);
