@@ -23,9 +23,6 @@ describe('directive', () => {
     newBunny.bunny = 'bunny';
     newBunny.submit();
     assert.equal(result, 'bunny');
-
-
-
-
+    assert.deepEqual(newBunny.bunny, {});
   });
 });
