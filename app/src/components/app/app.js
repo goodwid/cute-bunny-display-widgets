@@ -6,6 +6,9 @@ export default {
   controllerAs: 'app',
   controller() {
     this.styles = styles;
+    this.addBunny = (bunny) => {
+      this.data.push(bunny);
+    };
     this.data = [{
       title: 'Cutest Bunny Ever',
       description: 'This is the cutest damn bunny in all of creation.  Other things attempting to be cute tremble with terror at the cuteness of the bunny displayed here today.',
