@@ -5,7 +5,7 @@ export default {
   template,
   controllerAs: 'list',
   bindings: {
-    data: '='
+    data: '<'
   },
   controller: function() {
     this.styles = styles;

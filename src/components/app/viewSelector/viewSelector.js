@@ -4,7 +4,7 @@ export default {
   template,
   controllerAs: 'viewSelector',
   bindings: {
-    data: '='
+    data: '<'
   },
   controller: function() {
     this.view = 'tile';

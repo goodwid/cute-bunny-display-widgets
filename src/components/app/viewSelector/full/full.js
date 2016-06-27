@@ -5,7 +5,7 @@ export default {
   template,
   controllerAs: 'full',
   bindings: {
-    data: '='
+    data: '<'
   },
   controller: function() {
     this.index = 0;

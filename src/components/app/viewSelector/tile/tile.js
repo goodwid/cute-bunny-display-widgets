@@ -5,7 +5,7 @@ export default {
   template,
   controllerAs: 'tile',
   bindings: {
-    data: '='
+    data: '<'
   },
   controller: function() {
     this.styles = styles;
