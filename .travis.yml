@@ -3,8 +3,7 @@ language: node_js
 node_js:
   - 6
 
-script: node_modules/karma/bin/karma start app/karma.conf.js --single-run
-
+before_script: cd app
 
 before_install:
   - export CHROME_BIN=chromium-browser
