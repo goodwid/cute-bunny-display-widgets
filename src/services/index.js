@@ -11,8 +11,8 @@ const reqContext = require.context(
 const services = angular.module('services', []);
 
 reqContext.keys().forEach(key => {
-	const name = camelcase(path.basename(key, '.js'));
-	services.factory(name,reqContext(key).default );
+  const name = camelcase(path.basename(key, '.js'));
+  services.factory(name,reqContext(key).default );
 });
 
 export default services.name;

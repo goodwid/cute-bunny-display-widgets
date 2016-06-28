@@ -10,17 +10,18 @@ controller.inject = ['albumService', 'imageService'];
 
 function controller(albumService, imageService) {
   this.getImages = (album) => {
-    imageService.getImagesByAlbum(album).then(images => {
-      this.data = images;
-    });
+    imageService.getImagesByAlbum(album).then(images => this.data = images);
   };
-  imageService.get()
-    .then(images => this.data = images);
-  albumService.get()
-    .then(albums => {
-      this.albums = albums;
-      console.log('albumId: ', this.albumId);
-    });
+  this.addImage = (image) => {
+    imageService.add(image);
+    imageService.getImagesByAlbum(this.albumId).then(images => this.data = images);
+  };
+  this.addAlbum = (album) => {
+    albumService.add(album);
+    albumService.get().then(albums => this.albums = albums);
+  };
+  imageService.get().then(images => this.data = images);
+  albumService.get().then(albums => this.albums = albums);
   // this.data = [{
   //   title: 'Cutest Bunny Ever',
   //   description: 'This is the cutest damn bunny in all of creation.  Other things attempting to be cute tremble with terror at the cuteness of the bunny displayed here today.',

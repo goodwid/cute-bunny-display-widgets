@@ -10,9 +10,9 @@ export default {
   controller() {
     this.styles = styles;
     this.submit = () => {
-      let Album = this.Album;
-      this.add({Album});
-      this.Album = {};
+      let album = this.album;
+      this.add({album});
+      this.album = {};
 
     };
   }

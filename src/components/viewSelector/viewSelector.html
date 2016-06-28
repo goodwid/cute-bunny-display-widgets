@@ -2,7 +2,7 @@
   <nav>
     Pick an album:&nbsp;
     <select ng-model="viewSelector.albumId" ng-change="viewSelector.getImages(viewSelector.albumId)">
-      <option>-- Select an album --</option>
+      <option ng-if="!viewSelector.albumId" value="" ng-selected="selected">-- Select an album --</option>
       <option ng-repeat="album in viewSelector.albums" value="{{album._id}}">{{album.title}}</option>
     </select>
     Choose your display:&nbsp;
@@ -17,4 +17,7 @@
   <list ng-if="(viewSelector.view === 'list')" data="viewSelector.data"></list>
   <tile ng-if="(viewSelector.view === 'tile')" data="viewSelector.data"></tile>
   <full ng-if="(viewSelector.view === 'full')" data="viewSelector.data"></full>
+  <hr>
+  <new-image add="viewSelector.addImage(image)"></new-image>
+  <new-album add="viewSelector.addAlbum(album)"></new-album>
 </section>

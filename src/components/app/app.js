@@ -6,9 +6,6 @@ export default {
   controllerAs: 'app',
   controller() {
     this.styles = styles;
-    this.addImage = (image) => {
-      imageService.add(image);
-    };
 
   }
 };
