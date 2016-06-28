@@ -4,7 +4,16 @@ const assert = chai.assert;
 
 describe('newImage component', () => {
   angular.mock.module.sharedInjector();
-  before(angular.mock.module('components'));
+
+  before(angular.mock.module('components', ($provide) => {
+    $provide.service('albumService', function () {
+      return {
+        get() {
+          return Promise.resolve('nothing');
+        }
+      };
+    });
+  }));
 
   let $componentController;
   before(angular.mock.inject(($rootScope, _$componentController_) => {
