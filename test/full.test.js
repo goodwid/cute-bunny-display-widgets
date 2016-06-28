@@ -12,7 +12,6 @@ describe('slideshow', () => {
   it ('next function increases index', () => {
     const data = [0,1,2,3];
     const full = $componentController('full', null, {data});
-    full.data = data;
     full.next();
     assert.equal(full.index, 1);
 
