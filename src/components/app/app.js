@@ -7,7 +7,7 @@ export default {
   controller() {
     this.styles = styles;
     this.addImage = (image) => {
-      this.data.push(image);
+      imageService.add(image);
     };
 
   }
