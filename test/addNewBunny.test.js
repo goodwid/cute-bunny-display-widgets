@@ -2,7 +2,7 @@
 
 const assert = chai.assert;
 
-describe('directive', () => {
+describe('newImage component', () => {
   angular.mock.module.sharedInjector();
   before(angular.mock.module('components'));
 
@@ -11,18 +11,19 @@ describe('directive', () => {
     $componentController = _$componentController_;
   }));
 
-  it ('test', () => {
+  it ('add function works properly', () => {
 
     let result;
-    const add = ({bunny}) => {
-      result = bunny;
+    const add = ({image}) => {
+      result = image;
     };
 
-    const newBunny = $componentController('newBunny', null, {add});
+    const newImage = $componentController('newImage', null, {add});
 
-    newBunny.bunny = 'bunny';
-    newBunny.submit();
-    assert.equal(result, 'bunny');
-    assert.deepEqual(newBunny.bunny, {});
+    newImage.image = 'image';
+    newImage.submit();
+    console.log(result);
+    assert.equal(result, 'image');
+    assert.deepEqual(newImage.image, {});
   });
 });
