@@ -4,4 +4,4 @@ import services from './services';
 
 const app = angular.module('photoAlbum', [components, services]);
 
-export default app.name;
+export default app;

@@ -1,5 +1,10 @@
 <section>
   <nav>
+    Pick an album:&nbsp;
+    <select ng-model="viewSelector.albumId" ng-change="viewSelector.getImages(viewSelector.albumId)">
+      <option>-- Select an album --</option>
+      <option ng-repeat="album in viewSelector.albums" value="{{album._id}}">{{album.title}}</option>
+    </select>
     Choose your display:&nbsp;
     <input id="list" type="radio" ng-model="viewSelector.view" value="list">
     <label for="list">List</label>
