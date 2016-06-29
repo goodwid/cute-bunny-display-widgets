@@ -14,9 +14,9 @@
     <label for="full">Slideshow</label>
   </nav>
 
-  <list ng-if="(viewSelector.view === 'list')" data="viewSelector.data"></list>
-  <tile ng-if="(viewSelector.view === 'tile')" data="viewSelector.data"></tile>
-  <full ng-if="(viewSelector.view === 'full')" data="viewSelector.data"></full>
+  <list ng-if="(viewSelector.view === 'list')" data="viewSelector.images" delete-image="viewSelector.deleteImage(id)"></list>
+  <tile ng-if="(viewSelector.view === 'tile')" data="viewSelector.images"></tile>
+  <full ng-if="(viewSelector.view === 'full')" data="viewSelector.images"></full>
   <hr>
   <new-image add="viewSelector.addImage(image)"></new-image>
   <new-album add="viewSelector.addAlbum(album)"></new-album>

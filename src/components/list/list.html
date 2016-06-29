@@ -1,10 +1,10 @@
 <section>
   <div ng-class="list.styles.div">
-    
+
     <ul ng-class="list.styles.unordered">
       <li ng-repeat="image in list.data" ng-class="list.styles.items">
         <a href="{{image.url}}">{{image.title}}</a>
-        <br>{{image.description}}
+        <br>{{image.description}}<br><button ng-click="list.deleteImage({id:image._id})">delete</button>
       </li>
     </ul>
 </div>

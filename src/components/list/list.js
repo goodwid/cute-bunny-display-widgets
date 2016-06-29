@@ -5,10 +5,10 @@ export default {
   template,
   controllerAs: 'list',
   bindings: {
-    data: '<'
+    data: '<',
+    deleteImage: '&'
   },
-  controller: function() {
+  controller() {
     this.styles = styles;
-
   }
 };

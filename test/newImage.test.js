@@ -21,18 +21,15 @@ describe('newImage component', () => {
   }));
 
   it ('add function works properly', () => {
-
     let result;
     const add = ({image}) => {
       result = image;
     };
-
     const newImage = $componentController('newImage', null, {add});
-
     newImage.image = 'image';
     newImage.submit();
-    console.log(result);
     assert.equal(result, 'image');
     assert.deepEqual(newImage.image, {});
   });
+
 });
