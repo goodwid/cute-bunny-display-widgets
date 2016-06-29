@@ -40,4 +40,22 @@ describe('testing imageService', () => {
 
   });
 
+  it('posts images', done => {
+
+    const newImage = 4;
+
+    $httpBackend
+      .expectPOST('/api/image')
+      .respond(newImage);
+
+    imageService.add(newImage)
+        .then(postedImage => {
+          assert.deepEqual(postedImage, newImage);
+          done();
+        })
+        .catch(done);
+
+    $httpBackend.flush();
+  });
+
 });
