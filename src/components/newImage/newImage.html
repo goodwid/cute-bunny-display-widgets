@@ -1,0 +1,13 @@
+<section>
+  <h2 ng-class="newImage.styles.headline">Add a new Image</h2>
+  <form name="form" ng-submit="newImage.submit()">
+    <input ng-model="newImage.image.title" placeholder="title"><br>
+    <input ng-model="newImage.image.description" placeholder="description"><br>
+    <input ng-model="newImage.image.url" placeholder="url"><br>
+    <select ng-model="newImage.image.album">
+      <option>-- Select an album --</option>
+      <option ng-repeat="album in newImage.albums" value="{{album._id}}">{{album.title}}</option>
+    </select>
+    <button type="submit">Add Image</button>
+  </form>
+</section>

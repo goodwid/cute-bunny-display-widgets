@@ -1,5 +1,7 @@
 import angular from 'angular';
-import app from './bunny-app';
+import app from './photoAlbum';
 import './scss/main.scss';
 
-angular.bootstrap(document, [app]);
+app.value( 'apiUrl', 'http://localhost:9000/api');
+
+angular.bootstrap(document, [app.name]);

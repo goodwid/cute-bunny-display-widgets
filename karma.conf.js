@@ -5,7 +5,7 @@ const webpackConfig = require( './webpack.config' );
 webpackConfig.entry = {};
 
 // main Angular app entry point
-const testEntry = './src/bunny-app.js';
+const testEntry = './src/photoAlbum.js';
 
 // const preprocessors = {};
 // preprocessors[ entry ] = [ 'webpack' ];

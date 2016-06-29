@@ -1,4 +1,4 @@
-// const assert = chai.assert;
+const assert = chai.assert;
 
 describe('slideshow', () => {
   angular.mock.module.sharedInjector();
@@ -9,7 +9,7 @@ describe('slideshow', () => {
     $componentController = _$componentController_;
   }));
 
-  it ('next function increases index', () => {
+  it ('next/prev functions change index, wrap around ends', () => {
     const data = [0,1,2,3];
     const full = $componentController('full', null, {data});
     full.next();
