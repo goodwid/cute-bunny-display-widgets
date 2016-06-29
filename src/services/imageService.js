@@ -22,6 +22,11 @@ export default function imageService ($http, apiUrl) {
       return $http
       .post(`${apiUrl}/image`, image)
       .then(r => r.data);
+    },
+    delete(imageId) {
+      return $http
+      .delete(`${apiUrl}/image/${imageId}`)
+      .then(r => r.data);
     }
   };
 }
