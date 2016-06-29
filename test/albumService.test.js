@@ -22,7 +22,7 @@ describe('testing albumService', () => {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('gets all albums', done => {
+  it('get method', done => {
     const albums = [1,2,3];
     $httpBackend
       .expectGET('/api/album')
@@ -38,7 +38,7 @@ describe('testing albumService', () => {
     $httpBackend.flush();
   });
 
-  it('adds an album', done => {
+  it('add method', done => {
     const album = 'testing';
 
     $httpBackend
@@ -46,6 +46,24 @@ describe('testing albumService', () => {
       .respond(album);
 
     albumService.add(album)
+      .then(returnedAlbum => {
+        assert.deepEqual(returnedAlbum, album);
+        done();
+      })
+      .catch(done);
+
+    $httpBackend.flush();
+  });
+
+  it('delete method', done => {
+    const album = 'testing';
+    const albumId = 42;
+
+    $httpBackend
+      .expectDELETE(`/api/album/${albumId}`)
+      .respond(album);
+
+    albumService.delete(albumId)
       .then(returnedAlbum => {
         assert.deepEqual(returnedAlbum, album);
         done();

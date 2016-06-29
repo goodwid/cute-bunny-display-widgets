@@ -22,14 +22,14 @@ describe('testing imageService', () => {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('gets images', done => {
-    const albumId = 123;
+  it('get method', done => {
+    const imageId = 123;
     const images = [1,2,3];
     $httpBackend
       .expectGET('/api/image')
       .respond(images);
 
-    imageService.get(albumId)
+    imageService.get(imageId)
       .then(returnedImages => {
         assert.deepEqual(returnedImages, images);
         done();
@@ -40,9 +40,44 @@ describe('testing imageService', () => {
 
   });
 
-  it('posts images', done => {
+  it('getImage method', done => {
+    const image = 'testing';
+    const imageId = 42;
 
-    const newImage = 4;
+    $httpBackend
+      .expectGET(`/api/image/${imageId}`)
+      .respond(image);
+
+    imageService.getImage(imageId)
+      .then(returnedAlbum => {
+        assert.deepEqual(returnedAlbum, image);
+        done();
+      })
+      .catch(done);
+
+    $httpBackend.flush();
+  });
+
+  it('getImagesByAlbum method', done => {
+    const image = 'testing';
+    const albumId = 42;
+
+    $httpBackend
+      .expectGET(`/api/album/${albumId}`)
+      .respond(image);
+
+    imageService.getImagesByAlbum(albumId)
+      .then(returnedAlbum => {
+        assert.deepEqual(returnedAlbum, image);
+        done();
+      })
+      .catch(done);
+
+    $httpBackend.flush();
+  });
+
+  it('add method', done => {
+    const newImage = 'test';
 
     $httpBackend
       .expectPOST('/api/image')
@@ -54,6 +89,24 @@ describe('testing imageService', () => {
           done();
         })
         .catch(done);
+
+    $httpBackend.flush();
+  });
+
+  it('delete method', done => {
+    const image = 'testing';
+    const imageId = 42;
+
+    $httpBackend
+      .expectDELETE(`/api/image/${imageId}`)
+      .respond(image);
+
+    imageService.delete(imageId)
+      .then(returnedAlbum => {
+        assert.deepEqual(returnedAlbum, image);
+        done();
+      })
+      .catch(done);
 
     $httpBackend.flush();
   });
