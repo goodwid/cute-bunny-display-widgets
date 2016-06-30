@@ -1,11 +1,16 @@
+@import '../../scss/includes/colors';
+
 nav {
   display: flex;
+  height: 35px;
+  padding-top: 20px;
+  background: $header-background;
 
+  #selector {
+    width: 160px;
+  }
 }
 
-select {
-  width: 110px;
-}
-input {
-
+#images {
+  padding-top: 15px;
 }

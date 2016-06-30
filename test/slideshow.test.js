@@ -11,18 +11,18 @@ describe('slideshow', () => {
 
   it ('next/prev functions change index, wrap around ends', () => {
     const data = [0,1,2,3];
-    const full = $componentController('full', null, {data});
-    full.next();
-    assert.equal(full.index, 1);
+    const slideshow = $componentController('slideshow', null, {data});
+    slideshow.next();
+    assert.equal(slideshow.index, 1);
 
-    full.prev();
-    assert.equal(full.index, 0);
+    slideshow.prev();
+    assert.equal(slideshow.index, 0);
 
-    full.prev();
-    assert.equal(full.index, 3);
+    slideshow.prev();
+    assert.equal(slideshow.index, 3);
 
-    full.next();
-    assert.equal(full.index, 0);
+    slideshow.next();
+    assert.equal(slideshow.index, 0);
   });
 
 });

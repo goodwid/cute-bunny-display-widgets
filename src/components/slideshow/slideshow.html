@@ -1,0 +1,8 @@
+<section>
+  <button ng-click="slideshow.prev()">Prev</button><button ng-click="slideshow.next()">Next</button>
+  <p>
+    <h3>{{slideshow.data[slideshow.index].title}}</h3>
+    <img src="{{slideshow.data[slideshow.index].url}}"><br>
+    {{slideshow.data[slideshow.index].description}}
+  </p>
+</section>
