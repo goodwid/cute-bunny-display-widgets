@@ -2,8 +2,30 @@
   <h3>Albums</h3>
   <ul>
     <li ng-repeat="album in $ctrl.albums">
-      <a ui-sref="albums({albumId: album._id})">{{album.title}}</a>
+      <a ui-sref="albums.tile({albumId: album._id})">{{album.title}}</a>
     </li>
   </ul>
+  <nav>
+    Choose your display:&nbsp;
+    <input id="list" type="radio" ng-model="$ctrl.view" value="list">
+    <label for="list">List</label>
+    <input id="tile" type="radio" ng-model="$ctrl.view" value="tile">
+    <label for="tile">Tile</label>
+    <input id="slideshow" type="radio" ng-model="$ctrl.view" value="slideshow">
+    <label for="slideshow">Slideshow</label>
+  </nav>
+  <div ui-view>something something uiview</div>
 
+
+  <!-- <section>
+    <list ng-if="($ctrl.view === 'list')" data="$ctrl.images" delete-image="$ctrl.deleteImage(id)"></list>
+    <tile ng-if="($ctrl.view === 'tile')" data="$ctrl.images"></tile>
+    <slideshow ng-if="($ctrl.view === 'slideshow')" data="$ctrl.images"></slideshow>
+    <hr>
+    <new-image add="$ctrl.addImage(image)"></new-image>
+    <new-album add="$ctrl.addAlbum(album)"></new-album>
+  </section> -->
+
+
+  <!-- <view-selector></view-selector> -->
 </section>
