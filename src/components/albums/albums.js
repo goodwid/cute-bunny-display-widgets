@@ -3,14 +3,18 @@ import template from './albums.html';
 export default {
   template,
   bindings: {
-    display: '<'
+    display: '<',
+    view: '<'
   },
   controller
 };
 
-controller.inject = ['albumService', 'imageService'];
+controller.inject = ['albumService', 'imageService', '$state'];
 
-function controller(albumService, imageService) {
+function controller(albumService, imageService, $state) {
+  this.changeView = () => {
+    $state.go($state.current.name, {view: this.view});
+  };
   albumService.get()
     .then(albums => this.albums = albums);
 
@@ -43,7 +47,7 @@ function controller(albumService, imageService) {
 
 
   // default view
-  this.view = 'tile';
+  this.view = this.view || 'tile';
 
 
 

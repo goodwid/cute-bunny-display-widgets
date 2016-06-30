@@ -1,24 +1,8 @@
 <section>
-  <nav>
-    Pick an album:&nbsp;
-    <span id="selector"><select ng-model="viewSelector.albumId" ng-change="viewSelector.getImages(viewSelector.albumId)">
-      <option ng-if="!viewSelector.albumId" value="" ng-selected="selected">-- Select an album --</option>
-      <option ng-repeat="album in viewSelector.albums" value="{{album._id}}">{{album.title}}</option>
-    </select></span>
-    Choose your display:&nbsp;
-    <input id="list" type="radio" ng-model="viewSelector.view" value="list">
-    <label for="list">List</label>
-    <input id="tile" type="radio" ng-model="viewSelector.view" value="tile">
-    <label for="tile">Tile</label>
-    <input id="slideshow" type="radio" ng-model="viewSelector.view" value="slideshow">
-    <label for="slideshow">Slideshow</label>
-  </nav>
-  <section>
-    <list ng-if="(viewSelector.view === 'list')" data="viewSelector.images" delete-image="viewSelector.deleteImage(id)"></list>
-    <tile ng-if="(viewSelector.view === 'tile')" data="viewSelector.images"></tile>
-    <slideshow ng-if="(viewSelector.view === 'slideshow')" data="viewSelector.images"></slideshow>
-    <hr>
-    <new-image add="viewSelector.addImage(image)"></new-image>
-    <new-album add="viewSelector.addAlbum(album)"></new-album>
-  </section>
+
+
+  <list      ng-if="(viewSelector.view === 'list')"      data="viewSelector.images" delete-image="viewSelector.deleteImage(id)"></list>
+  <tile      ng-if="(viewSelector.view === 'tile')"      data="viewSelector.images"></tile>
+  <slideshow ng-if="(viewSelector.view === 'slideshow')" data="viewSelector.images"></slideshow>
+  <!-- View:  {{viewSelector.view}} -->
 </section>

@@ -1,32 +1,66 @@
 configRoutes.$inject = ['$stateProvider', '$urlRouterProvider'];
+const view = ['$stateParams', sP => {
+  return sP.view;
+}];
 
 export default function configRoutes($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/',
-      template: '<p><a ui-sref="albums">Albums</a>Home again home again</p>'
+      template: '<p><a ui-sref="albums">Albums</a></p>'
     })
-    // .state('albumlist', {
-    //   url: '/albumlist'
-    // })
+
     .state('albums', {
       url: '/albums',
-
+      params: {
+        view: {
+          dynamic: true
+        }
+      },
+      resolve: {
+        view
+      },
       component: 'albums'
     })
-    .state('albums.tile', {
-      url: '/:albumId',
-      component: 'tile',
+    .state('albums.album', {
+      url: '/:albumId?view',
+      params: {
+        view: {
+          dynamic: true
+        }
+      },
+      component: 'viewSelector',
       resolve: {
-        albumName: ['albumService', '$stateParams', (aS, sP) => {
-          aS.get(sP.albumId);
+        images: ['imageService', '$stateParams', (iS, sP) => {
+          return iS.getImagesByAlbum(sP.albumId);
         }],
-        display: ['$stateParams', sP => {
-          console.log(sP.display);
-          console.log(sP);
-        }]
+        view
       },
     });
+    // .state('albums.list', {
+    //   url: '/:albumId',
+    //   component: 'list',
+    //   resolve: {
+    //     albumName: ['albumService', '$stateParams', (aS, sP) => {
+    //       aS.get(sP.albumId);
+    //     }],
+    //     display: ['$stateParams', sP => {
+    //       console.log(sP);
+    //     }]
+    //   },
+    // })
+    // .state('albums.slideshow', {
+    //   url: '/:albumId',
+    //   component: 'slideshow',
+    //   resolve: {
+    //     albumName: ['albumService', '$stateParams', (aS, sP) => {
+    //       aS.get(sP.albumId);
+    //     }],
+    //     display: ['$stateParams', sP => {
+    //       console.log(sP);
+    //     }]
+    //   },
+    // });
   $urlRouterProvider.otherwise('/');
 }
 
