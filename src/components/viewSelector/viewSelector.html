@@ -13,7 +13,7 @@
     <input id="slideshow" type="radio" ng-model="viewSelector.view" value="slideshow">
     <label for="slideshow">Slideshow</label>
   </nav>
-  <section id="images">
+  <section>
     <list ng-if="(viewSelector.view === 'list')" data="viewSelector.images" delete-image="viewSelector.deleteImage(id)"></list>
     <tile ng-if="(viewSelector.view === 'tile')" data="viewSelector.images"></tile>
     <slideshow ng-if="(viewSelector.view === 'slideshow')" data="viewSelector.images"></slideshow>
