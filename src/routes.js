@@ -37,31 +37,5 @@ export default function configRoutes($stateProvider, $urlRouterProvider) {
         view
       },
     });
-    // .state('albums.list', {
-    //   url: '/:albumId',
-    //   component: 'list',
-    //   resolve: {
-    //     albumName: ['albumService', '$stateParams', (aS, sP) => {
-    //       aS.get(sP.albumId);
-    //     }],
-    //     display: ['$stateParams', sP => {
-    //       console.log(sP);
-    //     }]
-    //   },
-    // })
-    // .state('albums.slideshow', {
-    //   url: '/:albumId',
-    //   component: 'slideshow',
-    //   resolve: {
-    //     albumName: ['albumService', '$stateParams', (aS, sP) => {
-    //       aS.get(sP.albumId);
-    //     }],
-    //     display: ['$stateParams', sP => {
-    //       console.log(sP);
-    //     }]
-    //   },
-    // });
   $urlRouterProvider.otherwise('/');
 }
-
-// /album/23434345234?display=tile

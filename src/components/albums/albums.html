@@ -14,18 +14,6 @@
     <input id="slideshow" type="radio" ng-model="$ctrl.view" value="slideshow" ng-change="$ctrl.changeView()">
     <label for="slideshow">Slideshow</label>
   </nav>
-  <div ui-view>something something uiview</div>
-  <!-- <view-controller view="$ctrl.view" images="$ctrl.images"></view-controller> -->
+  <ui-view></ui-view>
 
-  <!-- <section>
-    <list ng-if="($ctrl.view === 'list')" data="$ctrl.images" delete-image="$ctrl.deleteImage(id)"></list>
-    <tile ng-if="($ctrl.view === 'tile')" data="$ctrl.images"></tile>
-    <slideshow ng-if="($ctrl.view === 'slideshow')" data="$ctrl.images"></slideshow>
-    <hr>
-    <new-image add="$ctrl.addImage(image)"></new-image>
-    <new-album add="$ctrl.addAlbum(album)"></new-album>
-  </section> -->
-
-
-  <!-- <view-selector></view-selector> -->
 </section>
