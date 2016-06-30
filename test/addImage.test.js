@@ -42,7 +42,7 @@ describe('testing imageService', () => {
 
   it('posts images', done => {
 
-    const newImage = 4;
+    const newImage = 'test';
 
     $httpBackend
       .expectPOST('/api/image')
