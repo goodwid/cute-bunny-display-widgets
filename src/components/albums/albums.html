@@ -1,0 +1,9 @@
+<section>
+  <h3>Albums</h3>
+  <ul>
+    <li ng-repeat="album in $ctrl.albums">
+      <a ui-sref="albums({albumId: album._id})">{{album.title}}</a>
+    </li>
+  </ul>
+
+</section>

@@ -6,19 +6,19 @@ export default function configRoutes($stateProvider, $urlRouterProvider) {
       url: '/',
       template: '<p>Home again home again</p>'
     })
+    .state('albums', {
+      url: '/albums',
+
+
+    })
     .state('album', {
       url: '/album/:albumId?display',
       resolve: {
-        albumName: ['albumService', '$stateParams', (a, p) => {
-          return a.get(p.albumId);
-        }],
-        display: ['$stateParams', (p) => {
-          
-        }]
+        albumName: ['albumService', '$stateParams', (aS, sP) => aS.get(sP.albumId)],
+        display: ['$stateParams', sP => sP.display]
       }
-    })
-    .state('list', {url: '/list'})
-    .state('tile', {})
-    .state('slideshow', {});
-
+    });
+  $urlRouterProvider.otherwise('/');
 }
+
+// /album/23434345234?display=tile
