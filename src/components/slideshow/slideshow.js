@@ -1,9 +1,9 @@
-import template from './full.html';
-import styles from './full.scss';
+import template from './slideshow.html';
+import styles from './slideshow.scss';
 
 export default {
   template,
-  controllerAs: 'full',
+  controllerAs: 'slideshow',
   bindings: {
     data: '<'
   },

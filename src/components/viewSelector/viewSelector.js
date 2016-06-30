@@ -1,4 +1,5 @@
 import template from './viewSelector.html';
+import styles from './viewSelector.scss';
 
 export default {
   template,
@@ -9,6 +10,7 @@ export default {
 controller.inject = ['albumService', 'imageService'];
 
 function controller(albumService, imageService) {
+  this.styles = styles;
   this.getImages = (album) => {
     imageService.getImagesByAlbum(album).then(images => this.images = images);
   };

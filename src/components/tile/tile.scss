@@ -1,9 +1,14 @@
+@import '../../scss/includes/colors';
 @mixin border {
   border: 1px solid darkgray;
 }
 $thumb-size: 80%;
-
 $tile-height: 220px;
+
+section {
+  background-color: $image-background;
+}
+
 :local(.image) {
   height: $thumb-size;
   width: $thumb-size;
@@ -23,9 +28,13 @@ $tile-height: 220px;
   padding: 10px;
   box-shadow:3px 3px 8px black;
   @include border;
+
+
+  background-color: white;
 }
 
 :local(.div){
+  background-color: white;
   width:92%;
   min-height: $tile-height * 1.2;
   height:auto;
