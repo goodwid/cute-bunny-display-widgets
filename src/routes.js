@@ -34,7 +34,8 @@ export default function configRoutes($stateProvider, $urlRouterProvider) {
         images: ['imageService', '$stateParams', (iS, sP) => {
           return iS.getImagesByAlbum(sP.albumId);
         }],
-        view
+        view,
+        albums: ['albumService', aS => aS.get()]
       },
     });
   $urlRouterProvider.otherwise('/');
