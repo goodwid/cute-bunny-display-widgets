@@ -3,10 +3,12 @@ import styles from './albums.scss';
 
 export default {
   template,
+  controllerAs: 'albums',
   bindings: {
     display: '<',
     view: '<'
   },
+
   controller
 };
 
