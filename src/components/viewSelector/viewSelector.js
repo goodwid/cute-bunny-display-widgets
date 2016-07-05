@@ -7,7 +7,8 @@ export default {
   bindings: {
     view: '=',
     images: '=',
-    albums: '='
+    albums: '=',
+    image: '='
   },
   controller
 };
@@ -15,20 +16,21 @@ export default {
 controller.inject = ['imageService', 'albumService'];
 
 function controller(imageService, albumService) {
+  console.log('parameter from the url: ', this.image);
+  // if (this.image)
+  //   imageService.getImage(this.image)
+  //     .then(image => {
+  //       if (image.album = this.album)
+  //         console.log('Match!');
+  //     });
 
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;
+    this.image = params.image;
   };
-  this.styles = styles;
-  this.deleteImage = (id) => {
-    imageService.delete(id)
-    .then(() => {
-      const index = this.images.findIndex(image => image._id === id);
-      if (index !== -1) this.images.splice(index,1);
-    })
-    .catch(err => console.error(err));
 
-  };
+  this.styles = styles;
+
   this.addImage = (image) => {
     let albumId = this.images[0].album;
     imageService.add(image)
@@ -49,9 +51,4 @@ function controller(imageService, albumService) {
       .catch(err => console.error(err));
     // imageService.getImagesByAlbum(this.albumId).then(images => this.images = images);
   };
-
-
-
-
-  // this.view = 'tile';
 }

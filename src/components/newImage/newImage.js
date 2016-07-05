@@ -5,18 +5,13 @@ export default {
   template,
   controllerAs: 'newImage',
   bindings: {
-    add: '&'
+    add: '&',
+    albums: '<'
   },
   controller
 };
 
-controller.inject = ['albumService'];
-
-function controller (albumService) {
-  albumService.get()
-    .then(albums => {
-      this.albums = albums;
-    });
+function controller () {
   this.styles = styles;
   this.submit = () => {
     let image = this.image;

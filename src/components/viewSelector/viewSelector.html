@@ -1,8 +1,8 @@
 <section>
   <list      ng-if="(viewSelector.view === 'list')"      data="viewSelector.images" delete-image="viewSelector.deleteImage(id)"></list>
   <tile      ng-if="(viewSelector.view === 'tile')"      data="viewSelector.images"></tile>
-  <slideshow ng-if="(viewSelector.view === 'slideshow')" data="viewSelector.images"></slideshow>
+  <slideshow ng-if="(viewSelector.view === 'slideshow')" data="viewSelector.images" image="viewSelector.image"></slideshow>
   <hr>
-  <new-image add="viewSelector.addImage(image)"></new-image>
+  <new-image add="viewSelector.addImage(image)" albums="viewSelector.albums"></new-image>
 
 </section>

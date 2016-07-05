@@ -16,17 +16,22 @@ controller.inject = ['albumService', 'imageService', '$state'];
 
 function controller(albumService, imageService, $state) {
   this.styles = styles;
+  imageService.get().then(images => this.images = images);
+  albumService.get().then(albums => this.albums = albums);
+
+  // default view
+  this.view = this.view || 'tile';
+
   this.changeView = () => {
     $state.go($state.current.name, {view: this.view});
   };
-  albumService.get()
-    .then(albums => this.albums = albums);
 
-  this.getImages = (album) => {
-    imageService.getImagesByAlbum(album)
-      .then(images => this.images = images)
-      .catch(err => console.error(err));
-  };
+  // this.getImages = (album) => {
+  //   imageService.getImagesByAlbum(album)
+  //     .then(images => this.images = images)
+  //     .catch(err => console.error(err));
+  // };
+
   this.addAlbum = (album) => {
     albumService.add(album)
       .then(album => this.albums.push(album))
@@ -35,9 +40,4 @@ function controller(albumService, imageService, $state) {
 
 
 
-  imageService.get().then(images => this.images = images);
-  albumService.get().then(albums => this.albums = albums);
-
-  // default view
-  this.view = this.view || 'tile';
 }

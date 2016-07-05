@@ -4,7 +4,7 @@
     <h3>Albums</h3>
     <ul>
       <li ng-repeat="album in albums.albums">
-        <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: albums.view, albums: albums.albums})">{{album.title}}</a>
+        <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: albums.view, albums: albums.albums, image: albums.image})">{{album.title}}</a>
       </li>
     </ul>
     <nav>
