@@ -37,11 +37,7 @@ function controller(imageService, albumService) {
       })
       .catch(err => console.error(err));
   };
-  this.addAlbum = (album) => {
-    albumService.add(album)
-      .then(album => this.albums.push(album))
-      .catch(err => console.error(err));;
-  };
+
   this.deleteImage = (id) => {
     let albumId = this.images[0].album;
     imageService.delete(id)

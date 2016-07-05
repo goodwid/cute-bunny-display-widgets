@@ -1,19 +1,23 @@
-<section ng-class="albums.styles.header">
-  <h3>Albums</h3>
-  <ul>
-    <li ng-repeat="album in albums.albums">
-      <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: albums.view, albums: albums.albums})">{{album.title}}</a>
-    </li>
-  </ul>
-  <nav>
-    Choose your display:&nbsp;
-    <input id="list" type="radio" ng-model="albums.view" value="list" ng-change="albums.changeView()">
-    <label for="list">List</label>
-    <input id="tile" type="radio" ng-model="albums.view" value="tile" ng-change="albums.changeView()">
-    <label for="tile">Tile</label>
-    <input id="slideshow" type="radio" ng-model="albums.view" value="slideshow" ng-change="albums.changeView()">
-    <label for="slideshow">Slideshow</label>
-  </nav>
+<section >
+  <div ng-class="albums.styles.header">
+
+    <h3>Albums</h3>
+    <ul>
+      <li ng-repeat="album in albums.albums">
+        <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: albums.view, albums: albums.albums})">{{album.title}}</a>
+      </li>
+    </ul>
+    <nav>
+      Choose your display:&nbsp;
+      <input id="list" type="radio" ng-model="albums.view" value="list" ng-change="albums.changeView()">
+      <label for="list">List</label>
+      <input id="tile" type="radio" ng-model="albums.view" value="tile" ng-change="albums.changeView()">
+      <label for="tile">Tile</label>
+      <input id="slideshow" type="radio" ng-model="albums.view" value="slideshow" ng-change="albums.changeView()">
+      <label for="slideshow">Slideshow</label>
+    </nav>
+  </div>
   <ui-view></ui-view>
+    <new-album add="albums.addAlbum(album)"></new-album>
 
 </section>

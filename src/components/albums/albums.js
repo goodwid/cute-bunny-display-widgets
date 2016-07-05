@@ -27,6 +27,11 @@ function controller(albumService, imageService, $state) {
       .then(images => this.images = images)
       .catch(err => console.error(err));
   };
+  this.addAlbum = (album) => {
+    albumService.add(album)
+      .then(album => this.albums.push(album))
+      .catch(err => console.error(err));;
+  };
 
 
 
