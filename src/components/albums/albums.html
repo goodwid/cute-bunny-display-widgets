@@ -1,8 +1,8 @@
-<section>
+<section class="album-header">
   <h3>Albums</h3>
   <ul>
     <li ng-repeat="album in $ctrl.albums">
-      <a ui-sref="albums.album({albumId: album._id, view: $ctrl.view, albums: $ctrl.albums})">{{album.title}}</a>
+      <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: $ctrl.view, albums: $ctrl.albums})">{{album.title}}</a>
     </li>
   </ul>
   <nav>

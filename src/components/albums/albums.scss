@@ -1,0 +1,26 @@
+:local(.album-header){
+
+  h3 {
+    margin: 0;
+    padding-top: 20px;
+    text-align: center;
+
+  }
+
+  ul {
+    
+    li {
+      display: inline-block;
+      text-align: center;
+      margin: 0 20px;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      a.active {
+        color: red;
+      }
+    }
+  }
+
+}

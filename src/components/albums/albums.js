@@ -1,4 +1,5 @@
 import template from './albums.html';
+import styles from './albums.scss';
 
 export default {
   template,
@@ -12,6 +13,7 @@ export default {
 controller.inject = ['albumService', 'imageService', '$state'];
 
 function controller(albumService, imageService, $state) {
+  this.styles = styles;
   this.changeView = () => {
     $state.go($state.current.name, {view: this.view});
   };
