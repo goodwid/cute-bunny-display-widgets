@@ -46,4 +46,18 @@ function controller(albumService, imageService, $state, userService, ngDialog) {
       }]
     });
   };
+
+  this.newImage = (e) => {
+    e.preventDefault();
+    const dialog = ngDialog.open({
+      template: '<new-image add="addImage(image)"></new-image>',
+      plain: true,
+      controller: ['$scope', ($scope) => {
+        $scope.addImage = (image) => {
+          dialog.close();
+          this.addImage(image);
+        };
+      }]
+    });
+  };
 }
