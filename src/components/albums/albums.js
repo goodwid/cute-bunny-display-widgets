@@ -12,10 +12,11 @@ export default {
   controller
 };
 
-controller.inject = ['albumService', 'imageService', '$state'];
+controller.inject = ['albumService', 'imageService', '$state', 'userService'];
 
-function controller(albumService, imageService, $state) {
+function controller(albumService, imageService, $state, userService) {
   this.styles = styles;
+  this.logout = () => userService.logout();
   imageService.get().then(images => this.images = images);
   albumService.get().then(albums => this.albums = albums);
 
