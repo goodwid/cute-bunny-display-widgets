@@ -1,4 +1,4 @@
-<section >
+<section>
   <div ng-class="albums.styles.header">
 
     <h3>Albums</h3>
@@ -7,7 +7,7 @@
       <li ng-repeat="album in albums.albums">
         <a ui-sref-active="active" ui-sref="albums.album({albumId: album._id, view: albums.view, albums: albums.albums, image: albums.image})">{{album.title}}</a>
       </li>
-      <li><a ng-click="album.newAlbum()">New Album</a></li>
+      <li><a href="#" ng-click="albums.newAlbum($event)">New Album</a></li>
     </ul>
     <nav>
       Choose your display:&nbsp;
@@ -20,6 +20,6 @@
     </nav>
   </div>
   <ui-view></ui-view>
-    <new-album add="albums.addAlbum(album)"></new-album>
+    <!-- <new-album add="albums.addAlbum(album)"></new-album> -->
 
 </section>

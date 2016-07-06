@@ -16,7 +16,7 @@ export default {
 controller.inject = ['imageService', 'albumService'];
 
 function controller(imageService, albumService) {
-  
+
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;
     this.image = params.image;
@@ -26,7 +26,9 @@ function controller(imageService, albumService) {
   this.styles = styles;
 
   this.addImage = (image) => {
-    let albumId = this.images[0].album;
+    let albumId;
+    if (this.images[0]) albumId = this.images[0].album;
+    else albumId = '';
     imageService.add(image)
       .then(image => {
         if (image.album === albumId) this.images.push(image);

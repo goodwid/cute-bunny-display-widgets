@@ -12,9 +12,9 @@ export default {
   controller
 };
 
-controller.inject = ['albumService', 'imageService', '$state', 'userService'];
+controller.inject = ['albumService', 'imageService', '$state', 'userService', 'ngDialog'];
 
-function controller(albumService, imageService, $state, userService) {
+function controller(albumService, imageService, $state, userService, ngDialog) {
   this.styles = styles;
   this.logout = () => userService.logout();
   imageService.get().then(images => this.images = images);
@@ -31,5 +31,19 @@ function controller(albumService, imageService, $state, userService) {
     albumService.add(album)
       .then(album => this.albums.push(album))
       .catch(err => console.error(err));;
+  };
+
+  this.newAlbum = (e) => {
+    e.preventDefault();
+    const dialog = ngDialog.open({
+      template: '<new-album add="addAlbum(album)"></new-album>',
+      plain: true,
+      controller: ['$scope', ($scope) => {
+        $scope.addAlbum = (album) => {
+          dialog.close();
+          this.addAlbum(album);
+        };
+      }]
+    });
   };
 }
