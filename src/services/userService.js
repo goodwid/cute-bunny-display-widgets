@@ -1,20 +1,56 @@
 userService.$inject = ['$window', '$http'];
 
-const TOKEN_NAME = 'token';
+export default function userService(token, $http, apiUrl) {
 
-export default function userService ($window, $http) {
+  const current = token.get();
+  if (current) {
+    $http.get(`${apiUrl}/verify`)
+      .catch(() => token.remove());
+  }
 
   return {
-    isAuthed() {
-      return !!$window.localStorage.getItem(TOKEN_NAME);
+    isAuthenticated() {
+      return !!token.get();
     },
-    authenticate(credentials) {
-      $http.post(`${apiUrl}/signin`, credentials)
+    logout() {
+      token.remove();
+    },
+    signin(credentials){
+      return $http.post(`${apiUrl}/signin`, credentials)
         .then(result => {
-          console.log(result);
+          token.set(result.data.token);
+        })
+        .catch(err => {
+          throw err.data;
         });
-      $window.localStorage.setItem(TOKEN_NAME);
-      return Promise.resolve(true);
+    },
+    signup(credentials) {
+      return $http.post(`${apiUrl}/signup`, credentials)
+        .then(result => {
+          token.set(result.data.token);
+        })
+        .catch(err => {
+          throw err.data;
+        });
     }
   };
 }
+
+// const TOKEN_NAME = 'token';
+//
+// export default function userService ($window, $http) {
+//
+//   return {
+//     isAuthed() {
+//       return !!$window.localStorage.getItem(TOKEN_NAME);
+//     },
+//     authenticate(credentials) {
+//       $http.post(`${apiUrl}/signin`, credentials)
+//         .then(result => {
+//           console.log(result);
+//         });
+//       $window.localStorage.setItem(TOKEN_NAME);
+//       return Promise.resolve(true);
+//     }
+//   };
+// }
