@@ -27,14 +27,14 @@ export default function configRoutes($stateProvider, $urlRouterProvider, $transi
     })
     .state('albums.album', {
       url: '/:albumId?view&image',
-      // params: {
-      //   view: {
-      //     dynamic: true
-      //   },
-      //   image: {
-      //     dynamic: true
-      //   }
-      // },
+      params: {
+        view: {
+          dynamic: true
+        },
+        image: {
+          dynamic: true
+        }
+      },
       component: 'viewSelector',
       resolve: {
         images: ['imageService', '$stateParams', (iS, sP) => {

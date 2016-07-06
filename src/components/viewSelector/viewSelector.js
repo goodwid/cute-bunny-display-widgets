@@ -27,6 +27,7 @@ function controller(imageService, albumService) {
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;
     this.image = params.image;
+    console.log('params changed: ', params);
   };
 
   this.styles = styles;
@@ -49,6 +50,5 @@ function controller(imageService, albumService) {
         if (this.images.length === 0) albumService.delete(albumId);
       })
       .catch(err => console.error(err));
-    // imageService.getImagesByAlbum(this.albumId).then(images => this.images = images);
   };
 }
