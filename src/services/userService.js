@@ -1,4 +1,4 @@
-userService.$inject = ['$window', '$http'];
+userService.$inject = ['tokenService', '$http', 'apiUrl'];
 
 export default function userService(token, $http, apiUrl) {
 
@@ -9,7 +9,7 @@ export default function userService(token, $http, apiUrl) {
   }
 
   return {
-    isAuthenticated() {
+    isAuthed() {
       return !!token.get();
     },
     logout() {
