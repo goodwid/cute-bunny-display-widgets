@@ -18,4 +18,5 @@ function controller () {
     this.add({image});
     this.image = {};
   };
+  console.log(this);
 }
