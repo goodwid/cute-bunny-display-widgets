@@ -10,6 +10,6 @@ app.config(routes);
 
 app.value( 'apiUrl', 'http://localhost:9000/api');
 
-// app.run(auth);
+app.run(auth);
 
 angular.bootstrap(document, [app.name]);

@@ -16,13 +16,6 @@ export default {
 controller.inject = ['imageService', 'albumService'];
 
 function controller(imageService, albumService) {
-  console.log('parameter from the url: ', this.image);
-  // if (this.image)
-  //   imageService.getImage(this.image)
-  //     .then(image => {
-  //       if (image.album = this.album)
-  //         console.log('Match!');
-  //     });
 
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;
@@ -33,7 +26,9 @@ function controller(imageService, albumService) {
   this.styles = styles;
 
   this.addImage = (image) => {
-    let albumId = this.images[0].album;
+    let albumId;
+    if (this.images[0]) albumId = this.images[0].album;
+    else albumId = '';
     imageService.add(image)
       .then(image => {
         if (image.album === albumId) this.images.push(image);

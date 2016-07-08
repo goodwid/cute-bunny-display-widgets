@@ -43,6 +43,7 @@
     "karma-safari-launcher": "^1.0.0",
     "karma-webpack": "^1.7.0",
     "mocha": "^2.5.3",
+    "ng-dialog": "^0.6.2",
     "ngdialog": "0.0.3",
     "node-sass": "^3.8.0",
     "sass-loader": "^3.2.1",
