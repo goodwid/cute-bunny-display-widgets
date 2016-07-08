@@ -7,7 +7,12 @@ export default function configRoutes($stateProvider, $urlRouterProvider, $transi
   $stateProvider
     .state('home', {
       url: '/',
-      template: '<p><a ui-sref="albums">Albums</a></p>'
+      template: `
+      <div id="intro">
+        Welcome to our image gallery.  Enjoy!<br>
+        <h2><a ui-sref="albums">Albums</a></h2>
+      </div>
+      `
     })
 
     .state('albums', {
