@@ -53,7 +53,6 @@ function controller(albumService, imageService, $state, userService, ngDialog) {
       template: '<new-image albums="albums" add="addImage(image)"></new-image>',
       plain: true,
       controller: ['$scope', ($scope) => {
-        console.log('scope: ', $scope);
         $scope.albums = this.albums;
         $scope.addImage = (image) => {
           dialog.close();

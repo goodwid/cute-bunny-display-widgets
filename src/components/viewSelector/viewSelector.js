@@ -20,7 +20,6 @@ function controller(imageService, albumService) {
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;
     this.image = params.image;
-    console.log('params changed: ', params);
   };
 
   this.styles = styles;
