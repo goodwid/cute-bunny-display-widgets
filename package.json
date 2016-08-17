@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline",
     "build": "webpack",
-    "test": "karma start"
+    "test": "CHROME_BIN='/opt/google/chrome/chrome' karma start"
   },
   "repository": {
     "type": "git",
