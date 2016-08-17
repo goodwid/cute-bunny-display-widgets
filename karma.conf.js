@@ -5,6 +5,7 @@ webpackConfig.entry = {};
 const testEntry = './src/photoAlbum.js';
 
 module.exports = function(config) {
+	// Define the configuration first, because we need to mod it if we're testing in Travis
   let configuration = {
     basePath: '',
     frameworks: [ 'mocha', 'chai' ],
@@ -24,22 +25,25 @@ module.exports = function(config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
-
-    customLaunchers: {
-      Chrome_travis_ci: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
+    browsers: ['Chrome', 'Firefox'],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
+
+
   };
 
+	// Configuration changes on Travis CI
   if (process.env.TRAVIS) {
-    configuration.browsers = ['Chrome_travis_ci'];
+		configuration.customLaunchers = {
+			Chrome_travis_ci: {
+				base: 'Chrome',
+				flags: ['--no-sandbox']
+			}
+		};
+    configuration.browsers = ['Chrome_travis_ci', 'Firefox'];
     configuration.singleRun = true;
   }
 
+	//
   config.set(configuration);
 };
