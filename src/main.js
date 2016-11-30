@@ -7,10 +7,7 @@ import auth from './auth';
 
 app.config(http);
 app.config(routes);
-
-app.value( 'apiUrl', 'http://localhost:9000/api');
-
-
 app.run(auth);
+app.value( 'apiUrl', 'http://localhost:9000/api');
 
 angular.bootstrap(document, [app.name]);

@@ -16,6 +16,7 @@ export default {
 controller.inject = ['imageService', 'albumService'];
 
 function controller(imageService, albumService) {
+  //console.log(this.image);
 
   this.uiOnParamsChanged = (params) => {
     this.view = params.view;

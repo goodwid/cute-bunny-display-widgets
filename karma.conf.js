@@ -20,7 +20,17 @@ module.exports = function(config) {
       [testEntry]: [ 'webpack' ],
       './test/**/*.js': [ 'babel' ]
     },
-    reporters: ['progress'],
+    reporters: ['spec'],
+
+    specReporter: {
+      maxLogLines: 5,
+      suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true,
+      showSpecTiming: false
+    },
+
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -28,22 +38,19 @@ module.exports = function(config) {
     browsers: ['Chrome', 'Firefox'],
     singleRun: false,
     concurrency: Infinity,
-
-
   };
 
-	// Configuration changes on Travis CI
+	// Configuration changes for running tests on Travis CI
   if (process.env.TRAVIS) {
-		configuration.customLaunchers = {
-			Chrome_travis_ci: {
-				base: 'Chrome',
-				flags: ['--no-sandbox']
-			}
-		};
+    configuration.customLaunchers = {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
+    };
     configuration.browsers = ['Chrome_travis_ci', 'Firefox'];
     configuration.singleRun = true;
   }
 
-	//
   config.set(configuration);
 };
